@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso de Diseño Gráfico</title>
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1 class="titulo-grande">Curso de Diseño Gráfico</h1>
+        <div class="botones">
+            <button id="trabajosBtn">Trabajos Prácticos</button>
+            <button id="teoriaBtn">Teoría</button>
+        </div>
+    </header>
+    <main>
+        <div id="trabajosPracticos" class="seccion oculto">
+            <div class="trabajo">
+                <a href="tps/TP1.pdf" target="_blank">Trabajo Práctico 1</a>
+            </div>
+            <div class="trabajo">
+                <a href="tps/TP2.pdf" target="_blank">Trabajo Práctico 2</a>
+            </div>
+            <div class="trabajo">
+                <a href="tps/TP3.pdf" target="_blank">Trabajo Práctico 3</a>
+            </div>
+            <div class="trabajo">
+                <a href="tps/TP4.pdf" target="_blank">Trabajo Práctico 4</a>
+            </div>
+            <div class="trabajo">
+                <a href="tps/TP5.pdf" target="_blank">Trabajo Práctico 5</a>
+            </div>
+            <div class="trabajo">
+                <a href="tps/TP6.pdf" target="_blank">Trabajo Práctico 6</a>
+            </div>
+            <div class="trabajo">
+                <a href="tps/TP7.pdf" target="_blank">Trabajo Práctico 7</a>
+            </div>
+        </div>
+        <div id="teoria" class="seccion oculto">
+            <h3>Contenido de Teoría</h3>
+            <p>Aquí puedes poner el contenido de la sección de teoría.</p>
+        </div>
+    </main>
+    <script>
+        // Script para mostrar/ocultar secciones y abrir manual.pdf en teoría
+        document.getElementById('trabajosBtn').addEventListener('click', function() {
+            document.getElementById('trabajosPracticos').classList.remove('oculto');
+            document.getElementById('teoria').classList.add('oculto');
+        });
+        document.getElementById('teoriaBtn').addEventListener('click', function() {
+            // Mostrar la sección de teoría
+            document.getElementById('teoria').classList.remove('oculto');
+            document.getElementById('trabajosPracticos').classList.add('oculto');
+            // Abrir manual.pdf en una nueva ventana
+            window.open('teoria/manual.pdf', '_blank');
+        });
+    </script>
+</body>
+</html>
