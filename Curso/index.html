@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso de Diseño Gráfico</title>
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Agregamos estilos para la sección de páginas útiles */
+        #paginasUtiles {
+            background-color: #1f3b4d; /* Mismo estilo que las secciones */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin-top: 20px;
+            padding: 20px;
+            display: none; /* Oculto por defecto */
+        }
+        #paginasUtiles h3 {
+            margin-top: 0;
+            color: #ffffff;
+        }
+        #paginasUtiles ul {
+            list-style: none;
+            padding: 0;
+        }
+        #paginasUtiles li {
+            margin-bottom: 15px;
+        }
+        #paginasUtiles a {
+            display: block;
+            padding: 12px 20px;
+            background-color: #3399ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+        #paginasUtiles a:hover {
+            background-color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="titulo-grande">Curso de Diseño Gráfico</h1>
+        <div class="botones">
+            <button id="trabajosBtn">Trabajos Prácticos</button>
+            <button id="teoriaBtn">Teoría</button>
+            <button id="paginasUtilesBtn">Páginas Útiles</button>
+        </div>
+    </header>
+    <main>
+        <div id="trabajosPracticos" class="seccion oculto">
+            <div class="trabajo">
+                <a href="tps/TP1.pdf" target="_blank">Trabajo Práctico 1</a>
+            </div>
+            <div class="trabajo">
+                <a href="tps/TP2.pdf" target="_blank">Trabajo Práctico 2</a>
+            </div>
+            <div class="trabajo">
+                <a href="tps/TP3.pdf" target="_blank">Trabajo Práctico 3</a>
+            </div>
+            <div class="trabajo">
+                <a href="tps/TP4.pdf" target="_blank">Trabajo Práctico 4</a>
+            </div>
+            <div class="trabajo">
+                <a href="tps/TP5.pdf" target="_blank">Trabajo Práctico 5</a>
+            </div>
+            <div class="trabajo">
+                <a href="tps/TP6.pdf" target="_blank">Trabajo Práctico 6</a>
+            </div>
+            <div class="trabajo">
+                <a href="tps/TP7.pdf" target="_blank">Trabajo Práctico 7</a>
+            </div>
+        </div>
+        <div id="teoria" class="seccion oculto">
+            <h3>Contenido de Teoría</h3>
+            <p>Aquí puedes poner el contenido de la sección de teoría.</p>
+        </div>
+        <!-- Sección de Páginas Útiles -->
+        <div id="paginasUtiles">
+            <h3>Páginas Útiles</h3>
+            <ul>
+                <li>
+                    <strong>Descargar fuentes</strong>
+                    <a href="https://www.dafont.com/es/" target="_blank">Ir a la página</a>
+                </li>
+                <li>
+                    <strong>Remover el fondo</strong>
+                    <a href="https://remove.bg/" target="_blank">Ir a la página</a>
+                </li>
+                <li>
+                    <strong>Crear mockups de remera y buzo 3D</strong>
+                    <a href="https://www.virtualthreads.io/" target="_blank">Ir a la página</a>
+                </li>
+                <li>
+                    <strong>Crear mockups generales</strong>
+                    <a href="https://mockupbro.com/es" target="_blank">Ir a la página</a>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <script>
+        // Script para mostrar/ocultar secciones y gestionar páginas útiles
+        const trabajosBtn = document.getElementById('trabajosBtn');
+        const teoriaBtn = document.getElementById('teoriaBtn');
+        const paginasUtilessBtn = document.getElementById('paginasUtilesBtn');
+
+        const trabajosDiv = document.getElementById('trabajosPracticos');
+        const teoriaDiv = document.getElementById('teoria');
+        const paginasUtilesDiv = document.getElementById('paginasUtiles');
+
+        // Función para ocultar todas las secciones
+        function ocultarTodas() {
+            trabajosDiv.classList.add('oculto');
+            teoriaDiv.classList.add('oculto');
+            paginasUtilesDiv.style.display = 'none';
+        }
+
+        // Evento para "Trabajos Prácticos"
+        trabajosBtn.addEventListener('click', () => {
+            ocultarTodas();
+            trabajosDiv.classList.remove('oculto');
+        });
+
+        // Evento para "Teoría"
+        teoriaBtn.addEventListener('click', () => {
+            ocultarTodas();
+            teoriaDiv.classList.remove('oculto');
+            // Abrir manual.pdf en una nueva ventana
+            window.open('teoria/manual.pdf', '_blank');
+        });
+
+        // Evento para "Páginas Útiles"
+        document.getElementById('paginasUtilesBtn').addEventListener('click', () => {
+            ocultarTodas();
+            paginasUtilesDiv.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
